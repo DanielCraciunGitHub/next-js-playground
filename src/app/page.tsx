@@ -1,19 +1,17 @@
 import { FC } from "react"
 
-import { DarkModeButton } from "@/components/DarkModeButton"
+import ContactForm from "@/components/ContactForm"
 
 interface pageProps {}
 
 const page: FC<pageProps> = ({}) => {
   return (
-    <div className="container flex flex-grow flex-col items-center justify-center space-y-5">
-      <h1 className="text-4xl">Welcome</h1>
-      <div>
-        this is a template powered by the shadcn ui library for people lazy to
-        do their own css.
+    <main className="flex flex-grow flex-col items-center justify-center">
+      <div className="space-y-4">
+        <h1 className="text-4xl">Contact Us</h1>
+        <ContactForm />
       </div>
-      <DarkModeButton />
-    </div>
+    </main>
   )
 }
 
