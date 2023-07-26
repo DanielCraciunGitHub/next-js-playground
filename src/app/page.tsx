@@ -1,16 +1,15 @@
-import { FC } from "react"
+import ClientComponentExample from "@/components/ClientComponentExample"
+import RouteHandlerExample from "@/components/RouteHandlerExample"
+import ServerActionExample from "@/components/ServerActionExample"
+import ServerComponentExample from "@/components/ServerComponentExample"
 
-import ContactForm from "@/components/ContactForm"
-
-interface pageProps {}
-
-const page: FC<pageProps> = ({}) => {
+const page = async () => {
   return (
-    <main className="flex flex-grow flex-col items-center justify-center">
-      <div className="space-y-4">
-        <h1 className="text-4xl">Contact Us</h1>
-        <ContactForm />
-      </div>
+    <main className="flex flex-grow flex-col items-center justify-center space-y-10">
+      <ClientComponentExample />
+      <ServerComponentExample />
+      <RouteHandlerExample />
+      <ServerActionExample />
     </main>
   )
 }
