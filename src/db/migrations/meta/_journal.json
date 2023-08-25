@@ -1,1 +1,27 @@
-{"version":"5","dialect":"mysql","entries":[{"idx":1,"version":"5","when":1692953759663,"tag":"0001_glorious_hellcat","breakpoints":true}]}
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1692971256649,
+      "tag": "0000_thick_tarantula",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1692971314704,
+      "tag": "0001_massive_iron_patriot",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1692972655790,
+      "tag": "0002_free_wasp",
+      "breakpoints": true
+    }
+  ]
+}

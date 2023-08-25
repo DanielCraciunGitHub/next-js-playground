@@ -1,25 +1,13 @@
-import { db } from "@/db"
-import { users } from "@/db/schema"
+import { getSession } from "@/lib/auth/session"
+import { AuthCard } from "@/components/auth-card"
+import { SignOutButton } from "@/components/sign-out-button"
 
-export default async function page() {
-  const dbUsers = await db.select().from(users)
-
-  const createUser = async () => {
-    "use server"
-
-    await db.insert(users).values({ name: "John Doe" })
-  }
+export default async function Home() {
+  const session = await getSession()
 
   return (
-    <>
-      <p>my users:</p>
-      {dbUsers.map((users) => (
-        <div key={users.id}>{users.name}</div>
-      ))}
-
-      <form action={createUser}>
-        <button>create user</button>
-      </form>
-    </>
+    <main className="bg-dark flex min-h-screen items-center justify-center text-white">
+      {!session ? <AuthCard /> : <SignOutButton />}
+    </main>
   )
 }

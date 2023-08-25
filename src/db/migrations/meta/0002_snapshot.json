@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "57235b66-2791-41b2-a424-1e492c8b9564",
-  "prevId": "b56fe1a1-b579-4b01-8cbb-9bdfc0b98cf8",
+  "id": "2a2f7743-0d99-4ec5-9934-2fdb352accd3",
+  "prevId": "57235b66-2791-41b2-a424-1e492c8b9564",
   "tables": {
     "accounts": {
       "name": "accounts",
@@ -179,6 +179,14 @@
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
+        },
+        "is_admin": {
+          "name": "is_admin",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": false
         }
       },
       "indexes": {},
