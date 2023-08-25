@@ -1,9 +1,25 @@
-const page = async () => {
+import { db } from "@/db"
+import { users } from "@/db/schema"
+
+export default async function page() {
+  const dbUsers = await db.select().from(users)
+
+  const createUser = async () => {
+    "use server"
+
+    await db.insert(users).values({ name: "John Doe" })
+  }
+
   return (
-    <main className="flex flex-grow flex-col items-center justify-center space-y-10">
-      POST api/email with the template in emails/email.tsx
-    </main>
+    <>
+      <p>my users:</p>
+      {dbUsers.map((users) => (
+        <div key={users.id}>{users.name}</div>
+      ))}
+
+      <form action={createUser}>
+        <button>create user</button>
+      </form>
+    </>
   )
 }
-
-export default page
