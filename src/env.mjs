@@ -10,6 +10,7 @@ export const env = createEnv({
     NEXT_PUBLIC_SUPABASE_ACCESS_TOKEN: z.string().min(1),
     NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: z.string().min(1),
+    NEXT_PUBLIC_PUSHER_APP_KEY: z.string().min(1),
   },
   server: {
     RECAPTCHA_SECRET_KEY: z.string().min(1),
@@ -34,6 +35,9 @@ export const env = createEnv({
 
     GOOGLE_CLIENT_ID: z.string().min(1),
     GOOGLE_CLIENT_SECRET: z.string().min(1),
+
+    PUSHER_APP_ID: z.string().min(1),
+    PUSHER_APP_SECRET: z.string().min(1),
   },
   experimental__runtimeEnv: {
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
@@ -41,5 +45,6 @@ export const env = createEnv({
       process.env.NEXT_PUBLIC_SUPABASE_ACCESS_TOKEN,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+    NEXT_PUBLIC_PUSHER_APP_KEY: process.env.NEXT_PUBLIC_PUSHER_APP_KEY,
   },
 })

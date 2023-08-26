@@ -1,10 +1,9 @@
-import { eq } from "drizzle-orm";
-import { z } from "zod";
+import { db } from "@/db"
+import { eq } from "drizzle-orm"
+import { z } from "zod"
 
-import { publicProcedure, router } from "./trpc";
+import { publicProcedure, router } from "./trpc"
 
-export const appRouter = router({
-  
-});
+export const appRouter = router({})
 
-export type AppRouter = typeof appRouter;
+export type AppRouter = typeof appRouter
