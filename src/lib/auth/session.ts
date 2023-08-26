@@ -20,10 +20,11 @@ export const getCurrentUser = async () => {
 
   const [currentUser] = await db
     .select({
-      userId: users.id,
-      email: users.email,
+      id: users.id,
       name: users.name,
+      email: users.email,
       image: users.image,
+      isAdmin: users.isAdmin,
     })
     .from(users)
     .where(eq(users.id, session.user.id))

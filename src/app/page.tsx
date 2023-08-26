@@ -1,13 +1,13 @@
-import { getSession } from "@/lib/auth/session"
 import { AuthCard } from "@/components/auth-card"
 import { SignOutButton } from "@/components/sign-out-button"
 
-export default async function Home() {
-  const session = await getSession()
+import { serverClient } from "./_trpc/serverClient"
 
+export default async function Home() {
+  const user = await serverClient.getUser()
   return (
     <main className="bg-dark flex min-h-screen items-center justify-center text-white">
-      {!session ? <AuthCard /> : <SignOutButton />}
+      {!user ? <AuthCard /> : <SignOutButton {...user} />}
     </main>
   )
 }
