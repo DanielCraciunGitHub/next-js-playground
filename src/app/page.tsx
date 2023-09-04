@@ -1,13 +1,11 @@
-import { AuthCard } from "@/components/auth-card"
-import { SignOutButton } from "@/components/sign-out-button"
-
-import { serverClient } from "./_trpc/serverClient"
+import Link from "next/link"
 
 export default async function Home() {
-  const user = await serverClient.getUser()
   return (
-    <main className="bg-dark flex min-h-screen items-center justify-center text-white">
-      {!user ? <AuthCard /> : <SignOutButton {...user} />}
+    <main className="flex grow">
+      <Link className="text-blue-500" href="/intercept">
+        Go to intercept
+      </Link>
     </main>
   )
 }
