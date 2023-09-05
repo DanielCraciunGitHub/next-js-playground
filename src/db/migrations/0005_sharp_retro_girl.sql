@@ -1,0 +1,1 @@
+ALTER TABLE `message` MODIFY COLUMN `text` varchar(255) NOT NULL;
